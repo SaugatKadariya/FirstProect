@@ -1,52 +1,59 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ mode: "onChange" });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    console.log("Email:", email);
-    console.log("Password:", password);
+  const onSubmit = (data) => {
+    console.log(data);
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-      >
+    <div className="flex justify-center items-center h-screen">
+      <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-200 p-8 rounded shadow-lg">
         <div className="mb-4">
+          <label className="block text-sm text-gray-700 mb-2">Email</label>
           <input
-            className="border-2 rounded py-2 px-4 w-full"
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            className="w-full border rounded py-2 px-3"
+            type="text"
+            name="email"
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^\S+@\S+$/i,
+                message: "Please enter a valid email",
+              },
+            })}
           />
-        </div>
-        <div className="mb-4">
-          <input
-            className="border-2 rounded py-2 px-4 w-full"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          {errors.email && <span className="text-red-500">{errors.email.message}</span>}
         </div>
 
-        <div className="flex items-center justify-between">
-          <button
-            type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          >
-            Login
-          </button>
+        <div className="mb-4">
+          <label className="block text-sm text-gray-700 mb-2">Password</label>
+          <input
+            className="w-full border rounded py-2 px-3"
+            type="password"
+            {...register("password", {
+              required: "Password is required",
+            })}
+          />
+          {errors.password && <span className="text-red-500">{errors.password.message}</span>}
         </div>
+
+        <button
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
 };
 
 export default Login;
+

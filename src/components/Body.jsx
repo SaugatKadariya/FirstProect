@@ -11,7 +11,7 @@ const Body = () => {
 
 
   return (
-    <div className="p-20">
+    <div className="p-20 flex justify-center items-center">
       <p className="text-xl font-bold mb-4">Count: {count}</p>
       <button
         onClick={increment}

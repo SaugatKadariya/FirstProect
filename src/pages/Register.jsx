@@ -16,7 +16,7 @@ export default function Register() {
   return (
     <div className="flex justify-center items-center  py-10  bg-gray-100">
       <form
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md"
+        className="bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="mb-4">
