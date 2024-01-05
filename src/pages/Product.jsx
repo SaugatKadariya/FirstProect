@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useGetAllProductsQuery } from "./Rtkquery";
 
+
 function Product() {
   const { data: productsData, isLoading } = useGetAllProductsQuery();
   const [searchTerm, setSearchTerm] = useState("");

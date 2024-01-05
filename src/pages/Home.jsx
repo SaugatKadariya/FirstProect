@@ -1,5 +1,7 @@
 import React from "react";
 import Logo from "../assets/Logo.jpg";
+import Counter from "../Redux/Count/Counter";
+import MyComponent from "../Redux/Todo/MyComponent";
 
 const Home = () => {
   return (
@@ -7,7 +9,9 @@ const Home = () => {
       <div className="flex items-center justify-center mb-6">
         <img src={Logo} alt="Football" className="h-24 w-auto" />
       </div>
-      <h1 className="text-4xl font-bold mb-4 text-center">Welcome to Our Page</h1>
+      <h1 className="text-4xl font-bold mb-4 text-center">
+        Welcome to Our Page
+      </h1>
       <p className="text-lg text-gray-700 mb-4">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida
         dolor ut justo fermentum, a suscipit nisi scelerisque. Proin sodales
@@ -23,6 +27,8 @@ const Home = () => {
         neque eget velit dignissim hendrerit. Fusce vel leo at dolor lobortis
         suscipit.
       </p>
+      <Counter />
+     
     </div>
   );
 };

@@ -4,13 +4,13 @@ import App from "./App.jsx";
 import "./index.css";
 import { ApiProvider } from "@reduxjs/toolkit/query/react";
 import { productsApi } from "./pages/Rtkquery";
-import Store from "./Redux/Store";
-
+import store from "./Redux/Count/Store.js";
+import { Provider } from "react-redux";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ApiProvider store={Store} api={productsApi}>
+    <Provider store={store}>
       <App />
-    </ApiProvider>
+    </Provider>
   </React.StrictMode>
 );

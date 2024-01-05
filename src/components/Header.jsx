@@ -34,8 +34,6 @@ function Header() {
                     to={path}
                     onClick={toggleMenu} // Close menu on click
                     className="block py-2 px-4 hover:bg-blue-700 rounded transition-colors"
-                    activeClassName="bg-blue-700"
-                    exact={true}
                   >
                     {text}
                   </NavLink>
@@ -52,8 +50,6 @@ function Header() {
                 className={({ isActive }) => isActive
                   ? "bg-red-500 py-2 px-4 rounded"
                   : "hover:text-red-500 py-2 px-4"}
-                activeClassName="bg-blue-700 text-red-500 py-2 px-4 rounded" // Apply the red color for active link with padding
-                exact={true}
               >
                 {text}
               </NavLink>

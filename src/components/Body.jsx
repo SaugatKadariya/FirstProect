@@ -15,13 +15,13 @@ const Body = () => {
       <p className="text-xl font-bold mb-4">Count: {count}</p>
       <button
         onClick={increment}
-        className="bg-blue-550 hover:text-red-500 hover:bg-blue-800 font-bold p-4 m-4 rounded"
+        className="bg-blue-500 hover:text-red-500 hover:bg-blue-800 font-bold p-4 m-4 rounded"
       >
         Increment
       </button>
       <button
         onClick={decrement}
-        className="bg-red-500 hover:text-red-700 font-bold p-4 m-4 rounded"
+        className="bg-red-500 hover:text-red-700 hover:bg-blue-800 font-bold p-4 m-4 rounded"
       >
         Decrement
       </button>

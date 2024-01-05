@@ -1,8 +1,11 @@
+import MyComponent from "../Redux/Todo/MyComponent";
 import Body from "../components/Body";
 
 const AboutUs = () => {
   return (
+    <>
     <div className="bg-gray-100 py-8 px-4 sm:px-8">
+      
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-6 text-center">About Us</h1>
         <p className="text-lg leading-relaxed">
@@ -20,7 +23,11 @@ const AboutUs = () => {
         </p>
       </div>
       <Body />
+     
     </div>
+    
+    </>
+
   );
 };
 
